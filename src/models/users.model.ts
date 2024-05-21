@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { UsersInterface } from "../interfaces/energie.interface";
+import { UsersInterface } from "../interfaces/users.interface";
 const usersSchema = new mongoose.Schema(
   {
     username: { type: String, required: true },

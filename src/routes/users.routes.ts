@@ -3,6 +3,7 @@ import {
   createUser,
   deleteUsers,
   getUsers,
+  thorwUserError,
 } from "../controllers/users.controllers";
 import { validateObjectId } from "../middlewares/validate.object.id";
 // Initialize a new router instance
@@ -12,6 +13,7 @@ const usersRoutes: Router = express.Router();
 
 usersRoutes.post("/", createUser);
 usersRoutes.get("/", getUsers);
+usersRoutes.get("/error", thorwUserError);
 
 usersRoutes.delete("/", deleteUsers);
 

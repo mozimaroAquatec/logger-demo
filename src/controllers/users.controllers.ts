@@ -87,3 +87,25 @@ export const deleteUsers = async function (req: Request, res: Response) {
     throw new ErrorResponse(500, `deleteUsers : ${error}`);
   }
 };
+
+/**
+ * @desc  Controller function to handle getting all energies
+ * @param DELETE /
+ * @param PUBLIC
+ **/
+export const thorwUserError = async function (req: Request, res: Response) {
+  try {
+    // Query the database for all Energies records
+
+    userslogger.error(
+      "user error example",
+      new ErrorResponse(400, "user error example")
+    );
+    return res.status(200).json(new SuccessResponse(200, "user error example"));
+  } catch (error) {
+    // Handle errors
+    res.status(500).json(new ErrorResponse(500, "Internal server error"));
+    userslogger.error("deleteUsers", new ErrorResponse(500, `${error}`));
+    throw new ErrorResponse(500, `thorwUserError : ${error}`);
+  }
+};

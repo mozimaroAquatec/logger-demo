@@ -6,7 +6,7 @@ import * as path from "path";
 // Function to create a development logger
 const createDevLogger = (serviceName: string) => {
   return createLogger({
-    level: "debug",
+    level: "info",
     format: combine(
       timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
       errors({ stack: true }),
