@@ -6,8 +6,11 @@ mongoose.set("strictQuery", true);
 
 const connectDB = async () => {
   try {
+    const DB = dbLogger.startTimer();
     await mongoose.connect(process.env.MONGO_URI as string);
-    dbLogger.info("data base connected successfully");
+    DB.done({ message: "data base connected successfully" });
+
+    // dbLogger.done("data base connected successfully");
   } catch (error) {
     dbLogger.error(
       "mongoose connect error",

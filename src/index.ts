@@ -4,17 +4,24 @@ import ErrorResponse from "./utils/error.handler"; // Importing custom error han
 import connectDB from "./config/connect.db"; // Importing MongoDB connection function
 import usersRoutes from "./routes/users.routes"; // Importing energy routes
 import cors from "cors";
-
+import fs from "fs";
 import "./config/env.config";
-import logger, { pageNotFound, serverLogger } from "./logging";
+import { serverLogger } from "./logging";
 import { logNotFound } from "./middlewares/page.not.found";
+import morgan from "morgan";
+import path from "path";
+
 // Creating an Express app
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 
+// Use Morgan middleware with the custom format and stream
+app.use(morgan("dev"));
+
 // Connecting to MongoDB
+
 connectDB();
 
 // Using the energy routes

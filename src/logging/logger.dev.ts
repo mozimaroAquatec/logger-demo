@@ -1,23 +1,12 @@
-import { createLogger, transports, format } from "winston";
-const { combine, timestamp, printf, colorize, errors, json, prettyPrint } =
-  format;
+import { createLogger, transports, format, Logger } from "winston";
+const { combine, timestamp, printf, colorize, errors, align } = format;
 import * as path from "path";
-
-// Function to create a development logger
-const createDevLogger = (serviceName: string) => {
+import morgan, { StreamOptions } from "morgan";
+const createDevLogger = (serviceName: string): Logger => {
   return createLogger({
     level: "info",
-    format: combine(
-      timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
-      errors({ stack: true }),
-      json()
-    ),
     transports: [
-      new transports.Console({
-        format: combine(
-          prettyPrint() // Use prettyPrint only for console output
-        ),
-      }),
+      new transports.Console(),
       new transports.File({
         filename: path.join(__dirname, `logs/dev/${serviceName}.log`),
       }),

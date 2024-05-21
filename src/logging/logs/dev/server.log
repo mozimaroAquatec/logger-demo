@@ -1,9 +1,1 @@
-{"PORT":"5000","level":"info","message":"Server is running on port 5000","service":"server","timestamp":"2024-05-20 11:23:17"}
-{"PORT":"5000","level":"info","message":"Server is running on port 5000","service":"server","timestamp":"2024-05-20 12:35:05"}
-{"PORT":"5000","level":"info","message":"Server is running on port 5000","service":"server","timestamp":"2024-05-20 12:35:31"}
-{"PORT":"5000","level":"info","message":"Server is running on port 5000","service":"server","timestamp":"2024-05-20 12:36:56"}
-{"PORT":"5000","level":"info","message":"Server is running on port 5000","service":"server","timestamp":"2024-05-20 12:39:01"}
-{"PORT":"5000","level":"info","message":"Server is running on port 5000","service":"server","timestamp":"2024-05-20 12:39:05"}
-{"PORT":"5000","level":"info","message":"Server is running on port 5000","service":"server","timestamp":"2024-05-20 12:54:20"}
-{"PORT":"5000","level":"info","message":"Server is running on port 5000","service":"server","timestamp":"2024-05-20 12:54:50"}
-{"PORT":"5000","level":"info","message":"Server is running on port 5000","service":"server","timestamp":"2024-05-20 12:55:21"}
+{"PORT":"5000","level":"info","message":"Server is running on port 5000","service":"server"}
